@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://djy64jm5pec5c"]
+
+[ext_resource type="Script" path="res://scripts/track.gd" id="1_klhbj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_komar"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3sbxl"]
+font_size = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_302kr"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="track" type="HBoxContainer"]
+size_flags_horizontal = 0
+script = ExtResource("1_klhbj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_komar")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+text = "track"
+label_settings = SubResource("LabelSettings_3sbxl")
+
+[node name="beats" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="template" type="Button" parent="beats"]
+custom_minimum_size = Vector2(50, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_302kr")

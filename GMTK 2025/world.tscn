@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj26sjjx2kkp4"]
+
+[ext_resource type="Script" uid="uid://cebxe8koegfym" path="res://world.gd" id="1_f3sb7"]
+
+[node name="World" type="Node2D"]
+position = Vector2(32, 0)
+script = ExtResource("1_f3sb7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-29.9438, 96)
+scale = Vector2(0.779436, 1.03571)
+polygon = PackedVector2Array(0, 0, 40, 0, 80, 32, 112, 32, 144, 32, 144, 80, 184, 80, 184, 48, 248, 48, 304, 8, 344, 8, 344, 64, 384, 64, 384, -96, 448, -96, 448, 64, 448, 72, 448, 128, 0, 128)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+color = Color(1, 0.219608, 1, 1)

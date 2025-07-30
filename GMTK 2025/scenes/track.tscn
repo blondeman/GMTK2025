@@ -23,6 +23,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_komar")
 
 [node name="Label" type="Label" parent="PanelContainer"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "track"
 label_settings = SubResource("LabelSettings_3sbxl")
@@ -35,3 +36,4 @@ custom_minimum_size = Vector2(50, 100)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_302kr")
+toggle_mode = true

@@ -4,8 +4,11 @@ extends HBoxContainer
 @onready var beat_container := $beats
 @onready var track_label := $PanelContainer/Label
 
-func setTrack(numBeats: int, trackName: String):
+var actionCode := -1
+
+func setTrack(numBeats: int, trackName: String, code: int):
 	track_label.text = trackName
+	actionCode = code
 	
 	for child in beat_container.get_children():
 		if child != beat_template:
@@ -17,7 +20,7 @@ func setTrack(numBeats: int, trackName: String):
 		beat.name = "beat_%d" % i
 		beat_container.add_child(beat)
 
-func setBeat(lastBeat: int, currentBeat: int):
+func setBeat(lastBeat: int, currentBeat: int) -> int: 
 	var last = beat_container.get_child(lastBeat)
 	var current = beat_container.get_child(currentBeat)
 
@@ -28,3 +31,9 @@ func setBeat(lastBeat: int, currentBeat: int):
 	var highlight := StyleBoxFlat.new()
 	highlight.bg_color = Color(1, 0.4, 0.4) # red-ish
 	current.add_theme_stylebox_override("normal", highlight)
+	
+	if current.has_method("is_pressed"):
+		if current.is_pressed():
+			return actionCode
+	
+	return -1

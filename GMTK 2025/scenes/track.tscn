@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://djy64jm5pec5c"]
+
+[ext_resource type="Script" path="res://scripts/track.gd" id="1_klhbj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_komar"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+border_width_left = 10
+border_width_right = 10
+border_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3sbxl"]
+font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_302kr"]
+bg_color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="track" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_klhbj")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_komar")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "track"
+label_settings = SubResource("LabelSettings_3sbxl")
+
+[node name="beats" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="template" type="Button" parent="beats"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_302kr")
+toggle_mode = true
+
+[node name="template2" type="Button" parent="beats"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_302kr")
+toggle_mode = true
+
+[node name="template3" type="Button" parent="beats"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_302kr")
+toggle_mode = true
+
+[node name="template4" type="Button" parent="beats"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_302kr")
+toggle_mode = true
+
+[node name="template5" type="Button" parent="beats"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_302kr")
+toggle_mode = true
+
+[node name="template6" type="Button" parent="beats"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_302kr")
+toggle_mode = true

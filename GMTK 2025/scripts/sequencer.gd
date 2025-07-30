@@ -9,6 +9,8 @@ extends Control
 	{"beat":1,"action":"block","name":"Block"},
 ]
 
+@export var spawner: Node2D
+
 var currentBeat := 0
 var lastBeatDelta := 0.0
 
@@ -44,4 +46,4 @@ func nextBeat():
 	for child in trackContainer.get_children():
 		var actionCode = child.setBeat(lastBeat, currentBeat)
 		if actionCode >= 0:
-			print(str(tracks[actionCode].beat) + tracks[actionCode].action)
+			spawner.processMinion(tracks[actionCode].beat, tracks[actionCode].action)

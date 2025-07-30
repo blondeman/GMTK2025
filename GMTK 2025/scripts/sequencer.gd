@@ -13,7 +13,7 @@ var currentBeat := 0
 var lastBeatDelta := 0.0
 
 var trackScene := preload("res://scenes/track.tscn")
-@onready var trackContainer := $Panel/trackContainer
+@onready var trackContainer := $trackContainer
 
 func _ready():
 	currentBeat = beats - 1

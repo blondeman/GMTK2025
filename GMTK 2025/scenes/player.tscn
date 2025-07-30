@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://oqmd233j2u7e"]
 
-[ext_resource type="Script" uid="uid://ibysf7h3a347" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://dh4yuifh8iukj" path="res://mc_ballyhoo.png" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://ibysf7h3a347" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dh4yuifh8iukj" path="res://art/mc_ballyhoo.png" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(18, 18)

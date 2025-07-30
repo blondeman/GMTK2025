@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b07n0lhyurdyk"]
 
-[ext_resource type="Script" path="res://scripts/sequencer.gd" id="1_b075n"]
+[ext_resource type="Script" uid="uid://spdbh7w01ruh" path="res://scripts/sequencer.gd" id="1_b075n"]
 
 [node name="sequencer" type="Panel"]
 anchors_preset = -1

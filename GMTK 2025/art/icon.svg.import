@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh4yuifh8iukj"
-path="res://.godot/imported/mc_ballyhoo.png-2875e103f5c43e7af38cbf58814b78f6.ctex"
+uid="uid://cp7j4v6qbqaqa"
+path="res://.godot/imported/icon.svg-2ffe2e9772a318535303737ea3c29287.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mc_ballyhoo.png"
-dest_files=["res://.godot/imported/mc_ballyhoo.png-2875e103f5c43e7af38cbf58814b78f6.ctex"]
+source_file="res://art/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-2ffe2e9772a318535303737ea3c29287.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

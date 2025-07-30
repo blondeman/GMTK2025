@@ -1,10 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmupuka156cl3"]
+[gd_scene load_steps=5 format=3 uid="uid://bmupuka156cl3"]
 
+[ext_resource type="PackedScene" uid="uid://dj26sjjx2kkp4" path="res://scenes/world.tscn" id="1_dbkse"]
 [ext_resource type="PackedScene" uid="uid://b07n0lhyurdyk" path="res://scenes/sequencer.tscn" id="1_l1caj"]
+[ext_resource type="PackedScene" uid="uid://oqmd233j2u7e" path="res://scenes/player.tscn" id="2_0n1tn"]
+[ext_resource type="PackedScene" uid="uid://c0j12hpbmcmbl" path="res://scenes/spawner.tscn" id="4_oox4p"]
 
 [node name="base_level" type="Node"]
 
 [node name="game" type="Node2D" parent="."]
 
-[node name="sequencer" parent="." instance=ExtResource("1_l1caj")]
+[node name="world" parent="game" instance=ExtResource("1_dbkse")]
+position = Vector2(-13, -30)
+
+[node name="spawner" parent="game" instance=ExtResource("4_oox4p")]
+position = Vector2(84, 30)
+
+[node name="player" parent="game" instance=ExtResource("2_0n1tn")]
+position = Vector2(231, 65)
+collision_layer = 2
+
+[node name="sequencer" parent="." node_paths=PackedStringArray("spawner") instance=ExtResource("1_l1caj")]
+anchor_top = 0.6
 grow_vertical = 0
+spawner = NodePath("../game/spawner")

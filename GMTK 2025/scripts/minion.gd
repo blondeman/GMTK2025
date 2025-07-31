@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 40.0
-@onready var direction = randi_range(-1,1)
+var direction = 0
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -11,5 +11,10 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func action(actionCode: String):
-	print(actionCode)
+func action(actionCodes: Array):
+	if "walk_left" in actionCodes:
+		direction = -1
+	elif "walk_right" in actionCodes:
+		direction = 1
+	else:
+		direction = 0

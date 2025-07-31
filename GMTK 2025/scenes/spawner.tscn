@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0j12hpbmcmbl"]
 
-[ext_resource type="Texture2D" uid="uid://cp7j4v6qbqaqa" path="res://art/icon.svg" id="1_2vbf6"]
 [ext_resource type="Script" uid="uid://dk3js3uei87aa" path="res://scripts/spawner.gd" id="1_ik2nu"]
+[ext_resource type="Texture2D" uid="uid://drkku6ueo1dnc" path="res://art/amp.png" id="2_ik2nu"]
 
 [node name="spawner" type="Node2D"]
 script = ExtResource("1_ik2nu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_2vbf6")
+texture = ExtResource("2_ik2nu")

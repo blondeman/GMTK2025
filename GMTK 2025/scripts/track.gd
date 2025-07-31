@@ -4,11 +4,13 @@ extends HBoxContainer
 @onready var beat_container := $beats
 @onready var track_label := $PanelContainer/Label
 
-var actionCode := -1
+var actionCode := ""
+var minionId := -1
 
-func setTrack(numBeats: int, trackName: String, code: int):
+func setTrack(numBeats: int, trackName: String, code: String, id: int):
 	track_label.text = trackName
 	actionCode = code
+	minionId = id
 	
 	for child in beat_container.get_children():
 		if child != beat_template:
@@ -20,7 +22,7 @@ func setTrack(numBeats: int, trackName: String, code: int):
 		beat.name = "beat_%d" % i
 		beat_container.add_child(beat)
 
-func setBeat(lastBeat: int, currentBeat: int) -> int: 
+func setBeat(lastBeat: int, currentBeat: int) -> String: 
 	var last = beat_container.get_child(lastBeat)
 	var current = beat_container.get_child(currentBeat)
 
@@ -36,4 +38,4 @@ func setBeat(lastBeat: int, currentBeat: int) -> int:
 		if current.is_pressed():
 			return actionCode
 	
-	return -1
+	return ""

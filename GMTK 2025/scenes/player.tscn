@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://oqmd233j2u7e"]
 
 [ext_resource type="Script" uid="uid://ibysf7h3a347" path="res://scripts/player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://dh4yuifh8iukj" path="res://art/mc_ballyhoo.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dti8qhfi6ntbx" path="res://art/player.png" id="2_g2els"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(18, 18)
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 12.0
 
 [node name="player" type="CharacterBody2D"]
 floor_stop_on_slope = false
@@ -12,8 +12,8 @@ script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-9.53674e-07, -1.43051e-06)
-scale = Vector2(0.02, 0.02)
-texture = ExtResource("2_onrkg")
+texture = ExtResource("2_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_onrkg")
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_qhqgy")

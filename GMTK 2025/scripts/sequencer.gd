@@ -65,6 +65,7 @@ func nextBeat():
 	var lastBeat = currentBeat
 	currentBeat += 1
 	if currentBeat >= beats:
+		spawner.resetMinions()
 		currentBeat = 0
 	
 	for trackContainer in get_children():

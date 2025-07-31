@@ -27,3 +27,10 @@ func spawn():
 
 func processMinion(id: int, codes: Array):
 	get_node("minion_%d" % id).action(codes)
+
+func resetMinions():
+	for child in get_children():
+		if child.name.begins_with("minion_"):
+			child.position = Vector2.ZERO
+			child.block = false
+			child.handleBlock()

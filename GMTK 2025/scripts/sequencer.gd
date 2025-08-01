@@ -7,10 +7,9 @@ var activeTrack = null
 var lastBeat = 0
 
 func setTracks(beats: int, tracks: Array):
-	await self.ready
-	
 	for child in get_children():
 		child.queue_free()
+	await get_tree().process_frame
 
 	for i in len(tracks):
 		var trackContainer = trackContainerScene.instantiate()

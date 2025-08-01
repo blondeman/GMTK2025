@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var sequencer: Control
+var sequencer: Control
 var minionScene := preload("res://scenes/minion.tscn")
 
 var sprites := [preload("res://art/sprite_frames/minion1.tres"), preload("res://art/sprite_frames/minion2.tres")]
@@ -31,10 +31,11 @@ var currentBeat = 0
 func _ready():
 	player.play()
 	next_beat_time = 0
+	sequencer = get_tree().get_nodes_in_group("sequencer")[0]
 	sequencer.setTracks(beats, tracks)
 	spawn()
 
-func _process(delta):
+func _process(_delta):
 	var current_time = player.get_playback_position()
 
 	if current_time < last_playback_time:
@@ -55,7 +56,8 @@ func spawn():
 		add_child(minion)
 
 func processMinion(id: int, codes: Array):
-	get_node("minion_%d" % id).action(codes, currentBeat * 2 / beats)
+	if has_node("minion_%d" % id):
+		get_node("minion_%d" % id).action(codes, currentBeat * 2 / beats)
 
 func resetMinions():
 	for child in get_children():

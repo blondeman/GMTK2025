@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c766aiynxf552"]
+
+[ext_resource type="PackedScene" uid="uid://dj26sjjx2kkp4" path="res://scenes/world.tscn" id="1_jp5fc"]
+[ext_resource type="PackedScene" uid="uid://c0j12hpbmcmbl" path="res://scenes/spawner.tscn" id="2_4ptlp"]
+[ext_resource type="PackedScene" uid="uid://oqmd233j2u7e" path="res://scenes/player.tscn" id="3_ycf23"]
+
+[node name="game" type="Node2D"]
+
+[node name="world" parent="." instance=ExtResource("1_jp5fc")]
+position = Vector2(-13, -30)
+
+[node name="spawner" parent="." instance=ExtResource("2_4ptlp")]
+position = Vector2(82, 42)
+
+[node name="player" parent="." instance=ExtResource("3_ycf23")]
+position = Vector2(229, 58)
+collision_layer = 2

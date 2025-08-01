@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvariehxra4xe"]
+[gd_scene load_steps=6 format=3 uid="uid://dvariehxra4xe"]
 
 [ext_resource type="Script" uid="uid://csxj4vteirlbu" path="res://scripts/minion.gd" id="1_y8etf"]
-[ext_resource type="Texture2D" uid="uid://dn50w8nxpxwi" path="res://art/note1.png" id="2_y8etf"]
-[ext_resource type="Texture2D" uid="uid://dnvx70q8kqdd3" path="res://art/block1.png" id="3_b4arb"]
+[ext_resource type="SpriteFrames" uid="uid://co7qolxukfrx6" path="res://art/sprite_frames/minion1.tres" id="2_1ddg2"]
 [ext_resource type="AudioStream" uid="uid://n2hufxkawii1" path="res://audio/one_note.wav" id="4_1ddg2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y8etf"]
@@ -15,18 +14,16 @@ size = Vector2(24, 20)
 collision_layer = 2
 script = ExtResource("1_y8etf")
 
-[node name="note" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_y8etf")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_1ddg2")
+animation = &"run"
 
-[node name="Sprite2D" type="Sprite2D" parent="note"]
-position = Vector2(0, -4)
-texture = ExtResource("2_y8etf")
+[node name="note" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_y8etf")
 
 [node name="block" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1ddg2")
-
-[node name="Sprite2D" type="Sprite2D" parent="block"]
-texture = ExtResource("3_b4arb")
 
 [node name="OneNote" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_1ddg2")

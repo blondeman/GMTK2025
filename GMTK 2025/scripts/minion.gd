@@ -8,8 +8,7 @@ var block = false
 
 @onready var noteCol := $note
 @onready var blockCol := $block
-@onready var noteSpr := $note/Sprite2D
-@onready var blockSpr := $block/Sprite2D
+@onready var sprite := $Sprite2D
 
 @onready var player := $OneNote
 
@@ -21,6 +20,10 @@ var pitches := [
 func _ready():
 	handleBlock()
 
+func setSpriteFrames(frames: SpriteFrames):
+	await self.ready
+	sprite.sprite_frames = frames
+
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -30,7 +33,22 @@ func _physics_process(delta: float) -> void:
 	if block:
 		velocity = Vector2.ZERO
 
+	animate()
 	move_and_slide()
+
+func animate():
+	if block:
+		sprite.play("block")
+		return
+	
+	if direction == 0:
+		sprite.play("idle")
+	elif direction > 0:
+		sprite.play("run")
+		sprite.flip_h = false
+	elif direction < 0:
+		sprite.play("run")
+		sprite.flip_h = true
 
 func action(actionCodes: Array, pitchType: int):
 	if "walk_left" in actionCodes:
@@ -62,14 +80,8 @@ func handleBlock():
 	if not block:
 		set_collision_layer_value(1, false)
 		noteCol.disabled = false
-		noteSpr.visible = true
-		
 		blockCol.disabled = true
-		blockSpr.visible = false
 	else:
 		set_collision_layer_value(1, true)
 		noteCol.disabled = true
-		noteSpr.visible = false
-		
 		blockCol.disabled = false
-		blockSpr.visible = true

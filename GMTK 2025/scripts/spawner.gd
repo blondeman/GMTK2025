@@ -3,7 +3,9 @@ extends Node2D
 @export var sequencer: Control
 var minionScene := preload("res://scenes/minion.tscn")
 
-@export var tracks := [
+var sprites := [preload("res://art/sprite_frames/minion1.tres"), preload("res://art/sprite_frames/minion2.tres")]
+
+var tracks := [
 	[
 		{"action":"walk_left","name":"Walk Left"},
 		{"action":"walk_right","name":"Walk Right"},
@@ -49,6 +51,7 @@ func spawn():
 	for i in len(tracks):
 		var minion = minionScene.instantiate()
 		minion.name = "minion_%d" % i
+		minion.setSpriteFrames(sprites[i])
 		add_child(minion)
 
 func processMinion(id: int, codes: Array):

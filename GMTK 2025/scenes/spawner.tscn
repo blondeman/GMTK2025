@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0j12hpbmcmbl"]
+[gd_scene load_steps=4 format=3 uid="uid://c0j12hpbmcmbl"]
 
 [ext_resource type="Script" uid="uid://dk3js3uei87aa" path="res://scripts/spawner.gd" id="1_ik2nu"]
 [ext_resource type="Texture2D" uid="uid://drkku6ueo1dnc" path="res://art/amp.png" id="2_ik2nu"]
+[ext_resource type="AudioStream" uid="uid://cg06ja4ry4p3e" path="res://audio/gmtk25.ogg" id="3_tx2ig"]
 
 [node name="spawner" type="Node2D"]
 script = ExtResource("1_ik2nu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ik2nu")
+
+[node name="audioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tx2ig")
+autoplay = true

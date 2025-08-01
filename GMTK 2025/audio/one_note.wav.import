@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://5axxqk2jaovf"
-path="res://.godot/imported/gmtk25.wav-770fd0d0eefa069e55231a4ac71e2061.sample"
+uid="uid://n2hufxkawii1"
+path="res://.godot/imported/one_note.wav-352f77ed0399faaa8656617a55239d46.sample"
 
 [deps]
 
-source_file="res://audio/gmtk25.wav"
-dest_files=["res://.godot/imported/gmtk25.wav-770fd0d0eefa069e55231a4ac71e2061.sample"]
+source_file="res://audio/one_note.wav"
+dest_files=["res://.godot/imported/one_note.wav-352f77ed0399faaa8656617a55239d46.sample"]
 
 [params]
 

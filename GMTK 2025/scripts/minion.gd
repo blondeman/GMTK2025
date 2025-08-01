@@ -11,6 +11,13 @@ var block = false
 @onready var noteSpr := $note/Sprite2D
 @onready var blockSpr := $block/Sprite2D
 
+@onready var player := $OneNote
+
+var pitches := [
+	[0, 4, 7, 12],
+	[2, 6, 9, 14]
+]
+
 func _ready():
 	handleBlock()
 
@@ -25,20 +32,31 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-func action(actionCodes: Array):
+func action(actionCodes: Array, pitchType: int):
 	if "walk_left" in actionCodes:
 		direction = -1
+		player.pitch_scale = getPitch(pitchType, 0)
+		player.play()
 	elif "walk_right" in actionCodes:
 		direction = 1
+		player.pitch_scale = getPitch(pitchType, 1)
+		player.play()
 	else:
 		direction = 0
-	
-	if "jump" in actionCodes and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 	
 	if "block" in actionCodes:
 		block = !block
 		handleBlock()
+		player.pitch_scale = getPitch(pitchType, 2)
+		player.play()
+	
+	if "jump" in actionCodes and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		player.pitch_scale = getPitch(pitchType, 3)
+		player.play()
+
+func getPitch(type: int, id: int) -> float:
+	return 1.0 * pow(2, pitches[type][id] / 12.0)
 
 func handleBlock():
 	if not block:

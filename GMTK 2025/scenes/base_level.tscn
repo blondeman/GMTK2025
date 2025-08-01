@@ -12,14 +12,14 @@
 [node name="world" parent="game" instance=ExtResource("1_dbkse")]
 position = Vector2(-13, -30)
 
-[node name="spawner" parent="game" instance=ExtResource("4_oox4p")]
+[node name="spawner" parent="game" node_paths=PackedStringArray("sequencer") instance=ExtResource("4_oox4p")]
 position = Vector2(82, 42)
+sequencer = NodePath("../../sequencer")
 
 [node name="player" parent="game" instance=ExtResource("2_0n1tn")]
 position = Vector2(229, 58)
 collision_layer = 2
 
-[node name="sequencer" parent="." node_paths=PackedStringArray("spawner") instance=ExtResource("1_l1caj")]
+[node name="sequencer" parent="." instance=ExtResource("1_l1caj")]
 anchor_top = 0.6
 grow_vertical = 0
-spawner = NodePath("../game/spawner")

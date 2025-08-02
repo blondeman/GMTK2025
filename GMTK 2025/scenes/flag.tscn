@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://u4sni8lodqme"]
+
+[ext_resource type="Script" uid="uid://b56mo8fnpi3y0" path="res://scenes/flag.gd" id="1_32e5v"]
+[ext_resource type="SpriteFrames" uid="uid://b38e2gpptl3yc" path="res://art/sprite_frames/gong.tres" id="1_76ss4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32e5v"]
+size = Vector2(33, 34)
+
+[node name="flag" type="Area2D"]
+collision_mask = 255
+script = ExtResource("1_32e5v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_76ss4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_32e5v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

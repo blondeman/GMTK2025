@@ -23,6 +23,7 @@ position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_y8etf")
 
 [node name="block" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_1ddg2")
 
 [node name="OneNote" type="AudioStreamPlayer" parent="."]

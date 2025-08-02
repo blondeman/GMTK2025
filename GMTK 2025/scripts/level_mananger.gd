@@ -4,9 +4,10 @@ var scene_paths: Array = []
 var loaded_scenes: Array = []
 @onready var game_container := $game
 
+var current_scene = 0
+
 func _ready():
 	load_all_scenes("res://scenes/levels")
-	load_scene_by_index(0)
 
 func load_all_scenes(folder_path: String):
 	var dir := DirAccess.open(folder_path)
@@ -22,7 +23,15 @@ func load_all_scenes(folder_path: String):
 	else:
 		push_error("Failed to open folder: " + folder_path)
 
+func load_next_level():
+	if current_scene + 1 < len(scene_paths):
+		load_scene_by_index(current_scene + 1)
+	else:
+		print("WIN")
+
 func load_scene_by_index(index: int) -> Node:
+	current_scene = index
+	
 	for child in game_container.get_children():
 		child.queue_free()
 

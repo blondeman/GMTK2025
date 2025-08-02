@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ba031y0s8iovc" path="res://scripts/level_mananger.gd" id="1_k2uud"]
 [ext_resource type="PackedScene" uid="uid://b07n0lhyurdyk" path="res://scenes/sequencer.tscn" id="1_l1caj"]
 
-[node name="base_level" type="Node"]
+[node name="base_level" type="Node" groups=["manager"]]
 script = ExtResource("1_k2uud")
 
 [node name="game" type="Node2D" parent="."]
